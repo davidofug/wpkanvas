@@ -1,0 +1,23 @@
+/**
+*Theme Name: WP PageBuilder Theme
+*Description: WordPress Blank is a theme for those who intend to use pagebuilders such as Elementor through the entire website.
+*Tags: Blank, Minimalist, Doesn't load, scripts and styles, supports all page builders.
+*Author: David of UG
+*Author URI: https://david.ug
+*Theme URI: https://david.ug
+*Version: 1.0.1
+**/
+
+html,body {
+    margin:0;
+    padding:0;
+    height:100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+*,*:after,*:before {
+	box-sizing: inherit;
+	outline: none;
+	position: relative;
+}
