@@ -5,8 +5,8 @@ add_action('wp_enqueue_scripts', function() {
     wp_enqueue_script( 'wpb-script', get_template_directory_uri().'/js/theme.js', [], false, true );
 });
 
-if( !function_exists('wppb_theme_setup')) :
-	function wppb_theme_setup() {
+if( !function_exists('wpkanvas_theme_setup')) :
+	function wpkanvas_theme_setup() {
 		
 		add_theme_support('post-thumbnails');
 		
@@ -21,16 +21,16 @@ if( !function_exists('wppb_theme_setup')) :
 
 endif;
 
-add_action('init','wppb_theme_setup');
+add_action('init','wpkanvas_theme_setup');
 
-if( !function_exists( 'wppb_theme_register_menu')):
-	function wppb_theme_register_menu() {
+if( !function_exists( 'wpkanvas_theme_register_menu')):
+	function wpkanvas_theme_register_menu() {
 	  register_nav_menu('primary',__( 'Primary Menu' ));
 	}
 
 endif;
 
-add_action( 'init', 'wppb_theme_register_menu' );
+add_action( 'init', 'wpkanvas_theme_register_menu' );
 
 if( !function_exists( 'billingRemovePostcode' ) ) :
 	function billingRemovePostcode( $fields ) {
