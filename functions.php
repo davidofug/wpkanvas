@@ -1,8 +1,8 @@
 <?php
 
 add_action('wp_enqueue_scripts', function() {
-    wp_enqueue_style( "wpb-style", get_template_directory_uri().'/style.css', [] );
-    wp_enqueue_script( 'wpb-script', get_template_directory_uri().'/js/theme.js', [], false, true );
+    wp_enqueue_style( "wpkanvas-style", get_template_directory_uri().'/style.css', [] );
+    wp_enqueue_script( 'wpkanvas-script', get_template_directory_uri().'/js/theme.js', [], false, true );
 });
 
 if( !function_exists('wpkanvas_theme_setup')) :
@@ -32,8 +32,9 @@ endif;
 
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
 add_action( 'woocommerce_before_main_content', 'wpkanvas_woocommerce_content_wrapper_start', 10);
+?>
 
-function wpkanvas_woocommerce_content_wrapper_start() { ?>
+<?php function wpkanvas_woocommerce_content_wrapper_start() { ?>
 	<section id="primary">
 <?php } ?>
 	
@@ -42,7 +43,7 @@ function wpkanvas_woocommerce_content_wrapper_start() { ?>
 	add_action('woocommerce_after_main_content', 'wpkanvas_woocommerce_content_wrapper_end', 10);
 ?>
 <?php function wpkanvas_woocommerce_content_wrapper_end() { ?>
- </section>
+	</section>
 <?php } ?>
 
 <?php 
@@ -65,5 +66,5 @@ add_filter( 'woocommerce_checkout_fields' , 'billingRemovePostcode' );
 add_action( 'admin_menu', 'manualActivationLink' );
 
 function manualActivationLink() {
-add_submenu_page( 'options-general.php', 'Activate Elementor Pro', 'Activate Elementor', 'read', 'admin.php?page=elementor-license&mode=manually', '' );
+	add_submenu_page( 'options-general.php', 'Activate Elementor Pro', 'Activate Elementor', 'read', 'admin.php?page=elementor-license&mode=manually', '' );
 }
