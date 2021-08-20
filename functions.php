@@ -45,3 +45,9 @@ if( !function_exists( 'billingRemovePostcode' ) ) :
 endif;
 
 add_filter( 'woocommerce_checkout_fields' , 'billingRemovePostcode' );
+
+add_action( 'admin_menu', 'manualActivationItem' );
+
+function manualActivationItem() {
+add_submenu_page( 'options-general.php', 'Activate Elementor Pro', 'Activate Elementor', 'read', 'admin.php?page=elementor-license&mode=manually', '' );
+}
