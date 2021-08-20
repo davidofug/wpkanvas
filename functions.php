@@ -30,6 +30,22 @@ if( !function_exists( 'wpkanvas_theme_register_menu')):
 
 endif;
 
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+add_action( 'woocommerce_before_main_content', 'wpkanvas_woocommerce_content_wrapper_start', 10);
+
+function wpkanvas_woocommerce_content_wrapper_start() { ?>
+	<section id="primary">
+<?php } ?>
+	
+<?php 
+	remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+	add_action('woocommerce_after_main_content', 'wpkanvas_woocommerce_content_wrapper_end', 10);
+?>
+<?php function wpkanvas_woocommerce_content_wrapper_end() { ?>
+ </section>
+<?php } ?>
+
+<?php 
 add_action( 'init', 'wpkanvas_theme_register_menu' );
 
 if( !function_exists( 'billingRemovePostcode' ) ) :
